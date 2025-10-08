@@ -16,7 +16,7 @@ export default function Home() {
   // Этот код выполнится один раз после загрузки страницы
   useEffect(() => {
     // Отправляем запрос на наш бэкенд Fastify
-    fetch('http://localhost:3000/api/message')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/message`)
       .then(response => response.json()) // Превращаем ответ в JSON
       .then(data => {
         // Обновляем состояние полученным сообщением
